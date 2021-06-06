@@ -1,0 +1,29 @@
+{
+  "name": "bismusic",
+  "version": "1.0.0",
+  "description": "Music CRUD APP",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./bin/www.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "bisMusic"
+  },
+  "author": "bis92",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.14.4",
+    "babel-loader": "^8.2.2"
+  }
+}
