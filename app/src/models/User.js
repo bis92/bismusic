@@ -10,13 +10,16 @@ class User {
         const client = this.body;
 
         try {
-            const { id, password } = await UserStorage.getUserInfo(client.id);
-            if (id === client.id && password === client.password) {
-                return { success: true, msg: "로그인에 성공했습니다." };
-            }
+            const user  = await UserStorage.getUserInfo(client.id);
+            if(user) {
+                if (user.id === client.id && user.password === client.password) {
+                    return { success: true, msg: "로그인에 성공했습니다." };
+                }
                 return { success: false, msg: "비밀번호가 틀렸습니다."};
-        } catch(err) {
+            }
             return { success: false, msg: "존재하지 않는 아이디입니다."};
+        } catch(err) {
+            return { success: false, err};
         }
     }
 
