@@ -12,7 +12,7 @@ class User {
         try {
             const { id, password } = await UserStorage.getUserInfo(client.id);
             if (id === client.id && password === client.password) {
-                return { success: true };
+                return { success: true, msg: "로그인에 성공했습니다." };
             }
                 return { success: false, msg: "비밀번호가 틀렸습니다."};
         } catch(err) {
@@ -26,7 +26,7 @@ class User {
             const response = await UserStorage.save(client);
             return response;
         } catch(err) {
-            return { success: false, msg: err };
+            return { success: false, err };
         }
     }
 }
